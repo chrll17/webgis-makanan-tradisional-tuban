@@ -1,9 +1,15 @@
-# install filament
-Dengan panduan dokumentasi resmi filament.
-Perintah install berikut berbeda dengan dokumentasi resmi karena error jika pakai seperti di dokumentasi.
+# panduan
+## 1. membuat mass assigment & relasi model
+Lokasi, Makanan, LokasiMakanan, PostingMakanan, User
+## 2. membuat resource filament
 ```powershell
-composer require filament/filament -W
+php artisan make:filament-resource Makanan
 
-php artisan filament:install --panels
+php artisan make:filament-resource Lokasi
+
+php artisan make:filament-resource LokasiMakanan
+
+php artisan make:filament-resource User
+
+php artisan make:filament-resource PostingMakanan
 ```
-jika sudah selesai, bisa di cek dengan mengunjungi link /admin
