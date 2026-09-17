@@ -1,34 +1,9 @@
-# panduan
-## 1. rubah migrasi users
-hapus kode bawaan migrasi users yang tidak digunakan
-
-## 2. model & migrasi Makanan
-Jalankan dari folder project:
+# install filament
+Dengan panduan dokumentasi resmi filament.
+Perintah install berikut berbeda dengan dokumentasi resmi karena error jika pakai seperti di dokumentasi.
 ```powershell
-php artisan make:model Makanan -m
-```
+composer require filament/filament -W
 
-## 3. Buat migrasi aktivasi ekstensi postgis
-Jalankan dari folder project:
-```powershell
-php artisan make:migration enable_postgis_extension
+php artisan filament:install --panels
 ```
-migrasi ini harus dibuat sebelum migrasi lokasi karena tabel lokasi perlu menggunakan ekstensi postgis
-
-## 4. model & migrasi Lokasi
-Jalankan dari folder project:
-```powershell
-php artisan make:model Lokasi -m
-```
-
-## 5. model & migrasi LokasiMakanan
-Jalankan dari folder project:
-```powershell
-php artisan make:model LokasiMakanan -m
-```
-
-## 6. model & migrasi PostingMakanan
-Jalankan dari folder project:
-```powershell
-php artisan make:model PostingMakanan -m
-```
+jika sudah selesai, bisa di cek dengan mengunjungi link /admin
