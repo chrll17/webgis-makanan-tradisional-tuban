@@ -21,8 +21,6 @@ class PostingMakananForm
                     ->required(),
                 Textarea::make('deskripsi')
                     ->columnSpanFull(),
-                Textarea::make('foto')
-                    ->columnSpanFull(),
                 Textarea::make('alamat')
                     ->required()
                     ->columnSpanFull(),
@@ -32,6 +30,8 @@ class PostingMakananForm
                 TextInput::make('longitude')
                     ->required()
                     ->numeric(),
+                Textarea::make('foto')
+                    ->columnSpanFull(),
                 TextInput::make('status')
                     ->required()
                     ->default('pending'),

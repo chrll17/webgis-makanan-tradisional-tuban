@@ -22,6 +22,13 @@ class LokasiResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'nama_tempat';
 
+    // untuk mengganti nama
+    protected static ?string $modelLabel = 'Data Lokasi';
+    protected static ?string $pluralModelLabel = 'Data Lokasi';
+    // end untuk mengganti nama
+
+    protected static string | \UnitEnum | null $navigationGroup = 'Master Data';
+
     public static function form(Schema $schema): Schema
     {
         return LokasiForm::configure($schema);

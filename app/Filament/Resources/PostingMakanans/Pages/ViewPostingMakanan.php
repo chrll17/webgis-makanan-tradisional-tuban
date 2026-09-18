@@ -3,15 +3,17 @@
 namespace App\Filament\Resources\PostingMakanans\Pages;
 
 use App\Filament\Resources\PostingMakanans\PostingMakananResource;
-use Filament\Resources\Pages\ListRecords;
+use Filament\Actions\EditAction;
+use Filament\Resources\Pages\ViewRecord;
 
-class ListPostingMakanans extends ListRecords
+class ViewPostingMakanan extends ViewRecord
 {
     protected static string $resource = PostingMakananResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
+            
         ];
     }
 }

@@ -22,6 +22,13 @@ class MakananResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'nama_makanan';
 
+    // untuk mengganti nama
+    protected static ?string $modelLabel = 'Data Makanan';
+    protected static ?string $pluralModelLabel = 'Data Makanan';
+    // end untuk mengganti nama
+
+    protected static string | \UnitEnum | null $navigationGroup = 'Master Data';
+
     public static function form(Schema $schema): Schema
     {
         return MakananForm::configure($schema);

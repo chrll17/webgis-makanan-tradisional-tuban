@@ -22,6 +22,14 @@ class UserResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'name';
 
+    // untuk mengganti nama
+    protected static ?string $modelLabel = 'Pengguna';
+    protected static ?string $pluralModelLabel = 'Pengguna';
+    // end untuk mengganti nama
+
+    // untuk mengelompokkan menu
+    protected static string | \UnitEnum | null $navigationGroup = 'Manajemen Sistem';
+
     public static function form(Schema $schema): Schema
     {
         return UserForm::configure($schema);

@@ -3,8 +3,10 @@
 namespace App\Filament\Resources\Users\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -15,13 +17,17 @@ class UsersTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label('Nama')
                     ->searchable(),
                 TextColumn::make('email')
-                    ->label('Email address')
-                    ->searchable(),
-                TextColumn::make('google_id')
+                    ->label('Email')
                     ->searchable(),
                 TextColumn::make('role')
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'admin' => 'success', // Memberikan warna hijau
+                        'user' => 'info',     // Memberikan warna biru
+                    })
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
@@ -36,7 +42,15 @@ class UsersTable
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                ViewAction::make()
+                    ->label('Detail')
+                    ->icon('heroicon-o-eye'),
+                EditAction::make()
+                    ->label('Edit')
+                    ->icon('heroicon-o-pencil-square'),
+                DeleteAction::make()
+                    ->label('Hapus')
+                    ->icon('heroicon-o-trash'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

@@ -1,15 +1,10 @@
 # panduan
-## 1. membuat mass assigment & relasi model
-Lokasi, Makanan, LokasiMakanan, PostingMakanan, User
-## 2. membuat resource filament
-```powershell
-php artisan make:filament-resource Makanan
+## 1. update resource filament user
 
-php artisan make:filament-resource Lokasi
+## 2. update resource filament & model makanan
 
-php artisan make:filament-resource LokasiMakanan
+## 3. update resource filament & model lokasi
 
-php artisan make:filament-resource User
+## 4. update resource filament & model postingmakanan
 
-php artisan make:filament-resource PostingMakanan
-```
+## 5. update resource filament & model lokasimakanan
